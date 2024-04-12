@@ -69,6 +69,12 @@ nav {
 
 dialog {
     border-radius: 10px;
+    transition: 0.2s all;
+}
+
+::backdrop {
+    background-image: radial-gradient(black, rgb(47, 47, 47));
+    opacity: 0.45;
 }
 
 @media only screen and (max-width: 600px) {
