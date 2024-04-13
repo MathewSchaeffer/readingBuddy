@@ -77,6 +77,14 @@ dialog {
     opacity: 0.45;
 }
 
+/* table {
+    border: 2px solid white;
+}
+
+table th {
+    border: 1px solid white;
+} */
+
 @media only screen and (max-width: 600px) {
     #mainContainer {
         flex-direction: column;
