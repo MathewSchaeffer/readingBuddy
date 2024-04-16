@@ -42,8 +42,6 @@ nav {
     justify-content: center;
 }
 
-
-
 .button-box button {
     height: 40px;
     width: 100%;
@@ -65,6 +63,7 @@ nav {
 
 #shelf {
     line-height: 2em;
+    padding-left: 0px;
 }
 
 dialog {
@@ -77,13 +76,17 @@ dialog {
     opacity: 0.45;
 }
 
-/* table {
-    border: 2px solid white;
+.listItem {
+    border: 1px solid #9a9a9a;
+    list-style-type: none;
+    margin: 10px auto;
+    padding-left: 10px;
+    border-radius: 10px;
 }
 
-table th {
-    border: 1px solid white;
-} */
+.listItem button {
+    width: 100px;
+}
 
 @media only screen and (max-width: 600px) {
     #mainContainer {
