@@ -24,19 +24,56 @@ function Book(author, title, read) {
     this.read = read;
 }
 
+// function updateList() {
+//     const shelf = document.getElementById("shelf");
+//     shelf.replaceChildren();
+//     for (let [index, books] of myLibrary.entries()) {
+//         let newLi = document.createElement("li");
+//         let newButton = document.createElement("button");
+//         let newButtonText = "";
+//         newLi.innerText = `${books.title}, by ${books.author}  -  `;
+//         newLi.classList.add("listItem");
+//         shelf.append(newLi);
+//         newLi.append(newButton);
+
+//         newButton.setAttribute("data-id", index);
+
+//         newButtonText = books.read ? "Read" : "Not Read";
+//         newButton.innerText = newButtonText;
+
+//         newButton.addEventListener("click", function (e) {
+//             if (books.read) {
+//                 books.read = false;
+//                 newButtonText = "Not Read";
+//             } else {
+//                 books.read = true;
+//                 newButtonText = "Read";
+//             }
+//             newButton.innerText = newButtonText;
+//             console.log(`${books.title} : Read: ${books.read}`)
+//         });
+//     }
+// }
+
 function updateList() {
     const shelf = document.getElementById("shelf");
     shelf.replaceChildren();
     for (let [index, books] of myLibrary.entries()) {
         let newLi = document.createElement("li");
         let newButton = document.createElement("button");
-        let newButtonText = ""
+        let newButtonText = "";
+        let newDiv = document.createElement("div");
+        let deleteButton = document.createElement("button");
+        deleteButton.innerText = "Remove Item";
+        shelf.append(newDiv);
         newLi.innerText = `${books.title}, by ${books.author}  -  `;
-        newLi.classList.add("listItem");
-        shelf.append(newLi);
-        newLi.append(newButton);
+        // newLi.classList.add("listItem");
+        newDiv.classList.add("listItem");
+        newDiv.append(newButton);
 
-        newButton.setAttribute("data-id", index);
+        newDiv.append(newLi);
+        newDiv.append(deleteButton)
+        newLi.setAttribute("data-id", index);
 
         newButtonText = books.read ? "Read" : "Not Read";
         newButton.innerText = newButtonText;
@@ -51,6 +88,12 @@ function updateList() {
             }
             newButton.innerText = newButtonText;
             console.log(`${books.title} : Read: ${books.read}`)
+        });
+
+        deleteButton.addEventListener("click", function (e) {
+            console.log(`delete button pressed for ${books.title}`)
+            myLibrary.splice(index, 1);
+            updateList();
         });
     }
 }
