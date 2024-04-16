@@ -3,10 +3,6 @@
 ReadingBuddy by Mathew Schaeffer 2024
 for the Odin Project
 
-Todo:
-
-Add delete button to remove an item from the Library array
-
 */
 
 const dialogButton = document.getElementById("dialogBoxButton");
@@ -24,37 +20,6 @@ function Book(author, title, read) {
     this.read = read;
 }
 
-// function updateList() {
-//     const shelf = document.getElementById("shelf");
-//     shelf.replaceChildren();
-//     for (let [index, books] of myLibrary.entries()) {
-//         let newLi = document.createElement("li");
-//         let newButton = document.createElement("button");
-//         let newButtonText = "";
-//         newLi.innerText = `${books.title}, by ${books.author}  -  `;
-//         newLi.classList.add("listItem");
-//         shelf.append(newLi);
-//         newLi.append(newButton);
-
-//         newButton.setAttribute("data-id", index);
-
-//         newButtonText = books.read ? "Read" : "Not Read";
-//         newButton.innerText = newButtonText;
-
-//         newButton.addEventListener("click", function (e) {
-//             if (books.read) {
-//                 books.read = false;
-//                 newButtonText = "Not Read";
-//             } else {
-//                 books.read = true;
-//                 newButtonText = "Read";
-//             }
-//             newButton.innerText = newButtonText;
-//             console.log(`${books.title} : Read: ${books.read}`)
-//         });
-//     }
-// }
-
 function updateList() {
     const shelf = document.getElementById("shelf");
     shelf.replaceChildren();
@@ -66,11 +31,9 @@ function updateList() {
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "Remove Item";
         shelf.append(newDiv);
-        newLi.innerText = `${books.title}, by ${books.author}  -  `;
-        // newLi.classList.add("listItem");
+        newLi.innerText = `${books.title}, by ${books.author}`;
         newDiv.classList.add("listItem");
         newDiv.append(newButton);
-
         newDiv.append(newLi);
         newDiv.append(deleteButton)
         newLi.setAttribute("data-id", index);
@@ -97,7 +60,6 @@ function updateList() {
         });
     }
 }
-
 
 // dummy data
 myLibrary.push(newBook = new Book("Steven Hernio", "Jurassic Ducks", true));
@@ -136,5 +98,3 @@ dialogButtonCancel.addEventListener("click", function (e) {
 });
 
 updateList();
-
-

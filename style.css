@@ -2,7 +2,6 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* background-color: #92d5ef; */
     background-color: rgb(52, 52, 52);
     color: rgb(205, 205, 205);
     box-sizing: border-box;
@@ -23,7 +22,6 @@ nav {
 }
 
 #left-navbar {
-    /* border: 1px solid black; */
     background-color: rgb(64, 64, 64);
     border-right: 1px solid #9a9a9a;
     flex: 1;
@@ -118,10 +116,5 @@ li {
         flex-direction: column;
         align-items: center;
     }
-
-    /* .listItem button {
-        align-self: center;
-    } */
-
 
 }
